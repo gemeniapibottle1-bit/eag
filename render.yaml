@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: eaglerproxy
+    runtime: node
+    buildCommand: npm install && npm run build
+    startCommand: node build/index.js
+    envVars:
+      - key: SERVER_HOST
+        value: your.minecraft.server.here
+      - key: SERVER_PORT
+        value: 25565
+      - key: PROXY_NAME
+        value: EaglerProxy
+      - key: MAX_CLIENTS
+        value: 20

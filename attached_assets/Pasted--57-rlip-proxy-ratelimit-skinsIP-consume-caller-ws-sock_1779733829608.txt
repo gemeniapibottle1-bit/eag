@@ -1,0 +1,69 @@
+
+57         rlip = proxy.ratelimit.skinsIP.consume(caller.ws._socket.remoteAddress);
+                                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/proxy/skins/SkinServer.ts:69:15 - error TS18048: 'player.skin' is possibly 'undefined'.
+
+69           if (player.skin.type == Enums.SkinType.BUILTIN) {
+                 ~~~~~~~~~~~
+
+src/proxy/skins/SkinServer.ts:72:81 - error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string | Buffer<ArrayBufferLike>'.
+  Type 'undefined' is not assignable to type 'string | Buffer<ArrayBufferLike>'.
+
+72             response.data = EaglerSkins.writeServerFetchSkinResultBuiltInPacket(player.uuid, player.skin.builtInSkin);
+                                                                                   ~~~~~~~~~~~
+
+src/proxy/skins/SkinServer.ts:72:94 - error TS18048: 'player.skin' is possibly 'undefined'.
+
+72             response.data = EaglerSkins.writeServerFetchSkinResultBuiltInPacket(player.uuid, player.skin.builtInSkin);
+                                                                                                ~~~~~~~~~~~
+
+src/proxy/skins/SkinServer.ts:74:22 - error TS18048: 'player.skin' is possibly 'undefined'.
+
+74           } else if (player.skin.type == Enums.SkinType.CUSTOM) {
+                        ~~~~~~~~~~~
+
+src/proxy/skins/SkinServer.ts:77:80 - error TS2345: Argument of type 'string | undefined' is not assignable to parameter of type 'string | Buffer<ArrayBufferLike>'.
+  Type 'undefined' is not assignable to type 'string | Buffer<ArrayBufferLike>'.
+
+77             response.data = EaglerSkins.writeServerFetchSkinResultCustomPacket(player.uuid, player.skin.skin, false);
+                                                                                  ~~~~~~~~~~~
+
+src/proxy/skins/SkinServer.ts:77:93 - error TS18048: 'player.skin' is possibly 'undefined'.
+
+77             response.data = EaglerSkins.writeServerFetchSkinResultCustomPacket(player.uuid, player.skin.skin, false);
+                                                                                               ~~~~~~~~~~~
+
+src/proxy/skins/SkinServer.ts:114:110 - error TS18046: 'err' is of type 'unknown'.
+
+114           this._logger.warn(`Failed to fetch skin URL ${parsedPacket_1.url} for player ${caller.username}: ${err.stack ?? err}`);
+                                                                                                                 ~~~
+
+
+Found 245 errors in 24 files.
+
+Errors  Files
+     2  src/config.ts:45
+    21  src/plugins/EagProxyAAS/CustomAuthflow.ts:5
+     5  src/plugins/EagProxyAAS/auth.ts:23
+     5  src/plugins/EagProxyAAS/commands.ts:266
+     6  src/plugins/EagProxyAAS/index.ts:47
+     5  src/plugins/EagProxyAAS/service/endpoints.ts:70
+    55  src/plugins/EagProxyAAS/utils.ts:25
+     2  src/proxy/Motd.ts:56
+     1  src/proxy/Packet.ts:36
+    20  src/proxy/Player.ts:35
+    32  src/proxy/Proxy.ts:36
+     4  src/proxy/Util.ts:46
+     3  src/proxy/packets/CSLoginPacket.ts:14
+     4  src/proxy/packets/CSSetSkinPacket.ts:13
+     1  src/proxy/packets/CSUsernamePacket.ts:11
+     1  src/proxy/packets/SCDisconnectPacket.ts:13
+     2  src/proxy/packets/SCSyncUuidPacket.ts:12
+     2  src/proxy/packets/channel/CSChannelMessage.ts:13
+     2  src/proxy/packets/channel/SCChannelMessage.ts:13
+    18  src/proxy/pluginLoader/PluginManager.ts:23
+    17  src/proxy/ratelimit/BucketRatelimiter.ts:28
+    17  src/proxy/skins/EaglerSkins.ts:95
+     9  src/proxy/skins/ImageEditor.ts:28
+    11  src/proxy/skins/SkinServer.ts:18
